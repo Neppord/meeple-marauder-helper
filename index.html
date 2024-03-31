@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Meeple Marauder Helper</title>
+    <style>
+        :root {
+            font-family: Helvetica, serif;
+            font-size: larger;
+        }
+        input[type=number] {
+            width: 2em;
+            padding: 0.25em;
+            text-align: right;
+            font-size: larger;
+        }
+        button {
+            padding: 1em;
+        }
+        p {
+            display: flex;
+        }
+        p > label {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    <label for="water">Water:</label>
+    <button onclick="decrement('water')">-</button>
+    <input id="water" type="number" value="0">
+    <button onclick="increment('water')">+</button>
+</p>
+<p>
+    <label for="food">Food:</label>
+    <button onclick="decrement('food')">-</button>
+    <input id="food" type="number" value="0">
+    <button onclick="increment('food')">+</button>
+</p>
+<p>
+    <label for="wood">Wood:</label>
+    <button onclick="decrement('wood')">-</button>
+    <input id="wood" type="number" value="0">
+    <button onclick="increment('wood')">+</button>
+</p>
+<script>
+    function increment(id) {
+        let element = document.getElementById(id);
+        element.value = Number.parseInt(element.value) + 1
+    }
+
+    function decrement(id) {
+        let element = document.getElementById(id);
+        element.value = Number.parseInt(element.value) - 1
+    }
+</script>
+</body>
+</html>
